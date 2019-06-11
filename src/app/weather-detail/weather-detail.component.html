@@ -1,0 +1,20 @@
+<div *ngIf="cityWeather">
+
+  <h2>{{city}} Weather Details</h2>
+  
+<div>
+    <label>Weather: {{cityWeather.weather[0].main}}</label>
+    <span ></span>
+  </div>
+<br>
+  <div>
+    <label >Description: {{cityWeather.weather[0].description}}</label>
+    <span ></span>
+  </div>
+  <div>
+    <label >Temprature: {{+cityWeather.main.temp - 273.15 | number}} C</label>
+    <span ></span>
+  </div>
+</div>
+
+<button (click)="goBack()">Go Back</button>
