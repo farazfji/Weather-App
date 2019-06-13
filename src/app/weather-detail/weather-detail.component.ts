@@ -12,6 +12,7 @@ import { WeatherService } from './weather.service';
 export class WeatherDetailComponent implements OnInit {
  city: string;
  cityWeather: any;
+ error = false;
  
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +25,8 @@ export class WeatherDetailComponent implements OnInit {
     this.weatherService.getCityWeather(this.city)
     .subscribe((response: any)=>{
       this.cityWeather = response;
+    }, (err) => {
+      this.error = true;    
     });
   }
 

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  weatherApiUrl: 'https://community-open-weather-map.p.rapidapi.com/weather?callback=test&id=2172797&units=%22metric%22+or+%n22imperial%22&mode=xml%2C+html',
+  weatherApiUrl: 'https://community-open-weather-map.p.rapidapi.com/weather',
   weatherApiUrlHost: 'community-open-weather-map.p.rapidapi.com',
   weatherApiUrlKey: 'd21cd90114msh085a8122c34d08cp1622cdjsn4e776c2ad067'
 };

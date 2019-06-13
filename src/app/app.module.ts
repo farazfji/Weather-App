@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { WeatherMainComponent } from './weather-main/weather-main.component';
 import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
 
+import { HttpInterceptorService } from './http-interceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,13 @@ import { WeatherDetailComponent } from './weather-detail/weather-detail.componen
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

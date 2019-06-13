@@ -15,18 +15,16 @@ export class WeatherService {
   ) { }
 
   getCityWeather(cityName:string){
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'X-RapidAPI-Host': environment.weatherApiUrlHost,
-        'X-RapidAPI-Key': environment.weatherApiUrlKey
-      }),
-      responseType: 'text' as 'json',
-      params: {
-        q: cityName + ',pk'
-      }
+
+    let param = {
+      q: cityName + ',pk',
+      callback:'test',
+      id:'2172797',
+      units:"metricimperial",
+      mode:"xml,html"
     };
 
-    return this.http.get(environment.weatherApiUrl, httpOptions)
+    return this.http.get(environment.weatherApiUrl, {params: param})
     .pipe(
       map((response:string ) => {
       response = response.substring(5);
